@@ -1,6 +1,6 @@
 <?php
 include 'connectdb.php';
-$edit = $_POST['edit'];
+$edit = mysql_real_escape_string($_POST['edit']);
 echo $edit;
 
 echo "asd";

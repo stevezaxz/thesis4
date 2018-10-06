@@ -2,9 +2,9 @@
 session_start();
 include('connectdb.php');
 
-if(isset($_POST['action'])) {
-		$login = $_POST['login'];
-		$password = $_POST['password'];
+if(isset(mysql_real_escape_string($_POST['action']))) {
+		$login = mysql_real_escape_string($_POST['login']);
+		$password = mysql_real_escape_string($_POST['password']);
 		
 		$result  = mysql_query("select user_name,password,status,user_privilege,user_id,fname,lname from tbluser where user_name='$login' AND password='$password'");
 		$row = mysql_num_rows($result);

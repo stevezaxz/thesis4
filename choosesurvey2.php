@@ -1,6 +1,6 @@
 <?php
 
-$a = $_POST['survey'];
+$a = mysql_real_escape_string($_POST['survey']);
    
 
 $file=  fopen("controller.txt","w") or exit("Unable to open file");

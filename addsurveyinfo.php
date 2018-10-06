@@ -1,11 +1,11 @@
 <?php
 include('connectdb.php');
 
-$question = $_POST['question'];
-$counter = $_POST['counter'];
-//$option1 = $_POST['option1'];
+$question = mysql_real_escape_string($_POST['question']);
+$counter = mysql_real_escape_string($_POST['counter']);
+//$option1 = mysql_real_escape_string($_POST['option1']);
     for($x=0;$x<$counter;++$x) {
-        $s[] = $_POST['option'.$x];
+        $s[] = mysql_real_escape_string($_POST['option'.$x]);
         
     }
 

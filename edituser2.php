@@ -43,7 +43,7 @@
                    </center>
           <form class="form-horizontal" id="form_validation" name="form_validation" action="edituserbackend.php" method="POST">
                     <?php
-				$uid = $_POST['edit'];
+				$uid = mysql_real_escape_string($_POST['edit']);
 				
 							$result  = mysql_query("select * from tbluser where user_id='$uid'");
 					$row = mysql_num_rows($result);
