@@ -17,10 +17,10 @@ for($x=0;$x<3;$x++) {
    // mysql_query("insert into tblreference values('',(select max(survey_id) from tblsurvey),'$arr[$x]',(select max(youth_id) from tblyouth),'$arr2[$x])");
 }
 
-/*$a = $_POST['option1'];
-$b = $_POST['option2'];
-$c = $_POST['option3'];
-$d = $_POST['option4'];
+/*$a = mysql_real_escape_string($_POST['option1']);
+$b = mysql_real_escape_string($_POST['option2']);
+$c = mysql_real_escape_string($_POST['option3']);
+$d = mysql_real_escape_string($_POST['option4']);
 echo $a . $b . $c. $d;*/
 
 ?>

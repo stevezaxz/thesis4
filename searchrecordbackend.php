@@ -1,12 +1,12 @@
 <?php
 include 'connectdb.php';
 
-//$barangay = $_POST['barangaylist'];
-//$fname = $_POST['fname'];
-//$lname = $_POST['lname'];
-//$flag = $_POST['flag'];
+//$barangay = mysql_real_escape_string($_POST['barangaylist']);
+//$fname = mysql_real_escape_string($_POST['fname']);
+//$lname = mysql_real_escape_string($_POST['lname']);
+//$flag = mysql_real_escape_string($_POST['flag']);
 //echo $barangay . $fname . $lname . $flag;
-$flag = $_POST['flag'];
+$flag = mysql_real_escape_string($_POST['flag']);
 
 evaluateflag($flag);
 
@@ -39,8 +39,8 @@ function evaluateflag($flag) {
     
         
     if($flag==1) {
-        $fname = $_POST['fname'];
-        $barangay = $_POST['barangaylist'];
+        $fname = mysql_real_escape_string($_POST['fname']);
+        $barangay = mysql_real_escape_string($_POST['barangaylist']);
        // echo $fname . $barangay . $flag;
             $result = mysql_query("select a.fname,a.mname,a.lname,a.bdate,a.gender,a.educatt,a.skul_last,a.skills,a.householdno,b.barangay_name from tblyouth as a,tblbarangay as b where a.youth_id = b.youth_id and b.barangay_name='$barangay' and a.fname like '%$fname%' ");
             display($result);
@@ -49,8 +49,8 @@ function evaluateflag($flag) {
     
     
     else if($flag==2) {
-        $lname = $_POST['lname'];
-        $barangay = $_POST['barangaylist'];
+        $lname = mysql_real_escape_string($_POST['lname']);
+        $barangay = mysql_real_escape_string($_POST['barangaylist']);
         
         $result = mysql_query("select a.fname,a.mname,a.lname,a.bdate,a.gender,a.educatt,a.skul_last,a.skills,a.householdno,b.barangay_name from tblyouth as a,tblbarangay as b where a.youth_id = b.youth_id and b.barangay_name='$barangay' and a.lname like '%$lname%' ");
         display($result);
@@ -60,9 +60,9 @@ function evaluateflag($flag) {
     
     
     else if($flag==3) {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $barangay = $_POST['barangaylist'];
+        $fname = mysql_real_escape_string($_POST['fname']);
+        $lname = mysql_real_escape_string($_POST['lname']);
+        $barangay = mysql_real_escape_string($_POST['barangaylist']);
         
         $result = mysql_query("select a.fname,a.mname,a.lname,a.bdate,a.gender,a.educatt,a.skul_last,a.skills,a.householdno,b.barangay_name from tblyouth as a,tblbarangay as b where a.youth_id = b.youth_id and b.barangay_name='$barangay' and a.fname like '%$fname%' and a.lname like '%$lname%'");
         display($result);
@@ -71,9 +71,9 @@ function evaluateflag($flag) {
     
     
     else if($flag==4) {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $barangay = $_POST['barangaylist'];
+        $fname = mysql_real_escape_string($_POST['fname']);
+        $lname = mysql_real_escape_string($_POST['lname']);
+        $barangay = mysql_real_escape_string($_POST['barangaylist']);
         
         $result = mysql_query("select a.fname,a.mname,a.lname,a.bdate,a.gender,a.educatt,a.skul_last,a.skills,a.householdno,b.barangay_name from tblyouth as a,tblbarangay as b where a.youth_id = b.youth_id and b.barangay_name='$barangay' and a.fname like '%$fname%' and a.lname like '%$lname%'");
         display($result);

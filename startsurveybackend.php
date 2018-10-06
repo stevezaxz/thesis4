@@ -1,33 +1,33 @@
 <?php
 include ("connectdb.php");
-$fname = $_POST['fname'];
-$mname = $_POST['mname'];
-$lname = $_POST['lname'];
-$gender = $_POST['Gender'];
-$household = $_POST['household'];
-$religion = $_POST['religion'];
-$barangay = $_POST['brgy'];
-$month = $_POST['month'];
-$day = $_POST['day'];
-$year = $_POST['year'];
-$skullast = $_POST['skullast'];
-$skills = $_POST['skills'];
-$fathersname = $_POST['fathersname'];
-$fage = $_POST['fage'];
-$fathersoccu = $_POST['fathersoccu'];
-$fathersrelig = $_POST['fathersrelig'];
-$mothersname = $_POST['mothersname'];
-$mage = $_POST['mage'];
-$mothersoccu = $_POST['mothersoccu'];
-$mothersrelig = $_POST['mothersrelig'];
-$status = $_POST['status'];
-$educatt = $_POST['educatt'];
-$employed = $_POST['employed'];
-$reg = $_POST['reg'];
+$fname = mysql_real_escape_string($_POST['fname']);
+$mname = mysql_real_escape_string($_POST['mname']);
+$lname = mysql_real_escape_string($_POST['lname']);
+$gender = mysql_real_escape_string($_POST['Gender']);
+$household = mysql_real_escape_string($_POST['household']);
+$religion = mysql_real_escape_string($_POST['religion']);
+$barangay = mysql_real_escape_string($_POST['brgy']);
+$month = mysql_real_escape_string($_POST['month']);
+$day = mysql_real_escape_string($_POST['day']);
+$year = mysql_real_escape_string($_POST['year']);
+$skullast = mysql_real_escape_string($_POST['skullast']);
+$skills = mysql_real_escape_string($_POST['skills']);
+$fathersname = mysql_real_escape_string($_POST['fathersname']);
+$fage = mysql_real_escape_string($_POST['fage']);
+$fathersoccu = mysql_real_escape_string($_POST['fathersoccu']);
+$fathersrelig = mysql_real_escape_string($_POST['fathersrelig']);
+$mothersname = mysql_real_escape_string($_POST['mothersname']);
+$mage = mysql_real_escape_string($_POST['mage']);
+$mothersoccu = mysql_real_escape_string($_POST['mothersoccu']);
+$mothersrelig = mysql_real_escape_string($_POST['mothersrelig']);
+$status = mysql_real_escape_string($_POST['status']);
+$educatt = mysql_real_escape_string($_POST['educatt']);
+$employed = mysql_real_escape_string($_POST['employed']);
+$reg = mysql_real_escape_string($_POST['reg']);
 //$bdate = $month . " " . $day . "," . $year;
-$option = $_POST['option1'];
+$option = mysql_real_escape_string($_POST['option1']);
 $bdate = $month . " " . $day . "," . $year;
-$hawid = $_POST['hawid'];
+$hawid = mysql_real_escape_string($_POST['hawid']);
  
 /////////kuha sa controller id 
 $file = fopen("controller.txt", "r");
@@ -41,7 +41,7 @@ $file = fopen("controller.txt", "r");
             fclose($file);
 
     for($a=0;$a<$hawid;$a++){
-        $arr2[$a]= $_POST['option'.$a];   /////<--- pag kuha sa dynamic value sa mga radio buttons!
+        $arr2[$a]= mysql_real_escape_string($_POST['option'.$a]);   /////<--- pag kuha sa dynamic value sa mga radio buttons!
     }
             
    // print_r($arr2);

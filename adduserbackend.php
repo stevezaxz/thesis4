@@ -1,11 +1,11 @@
 <?php
 include('connectdb.php');
-$fname = $_POST['fname'];
-$lname= $_POST['lname'];
-$mname = $_POST['mname'];
-$username = $_POST['username'];
-$privilege = $_POST['userpriv'];
-$password = $_POST['password'];
+$fname = mysql_real_escape_string($_POST['fname']);
+$lname= mysql_real_escape_string($_POST['lname']);
+$mname = mysql_real_escape_string($_POST['mname']);
+$username = mysql_real_escape_string($_POST['username']);
+$privilege = mysql_real_escape_string($_POST['userpriv']);
+$password = mysql_real_escape_string($_POST['password']);
 
 $result = mysql_query("select user_name from tbluser where user_name='$username'");
 
