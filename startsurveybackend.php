@@ -1,33 +1,11 @@
 <?php
 include ("connectdb.php");
-$fname = $_POST['fname'];
-$mname = $_POST['mname'];
-$lname = $_POST['lname'];
-$gender = $_POST['Gender'];
-$household = $_POST['household'];
-$religion = $_POST['religion'];
-$barangay = $_POST['brgy'];
-$month = $_POST['month'];
-$day = $_POST['day'];
-$year = $_POST['year'];
-$skullast = $_POST['skullast'];
-$skills = $_POST['skills'];
-$fathersname = $_POST['fathersname'];
-$fage = $_POST['fage'];
-$fathersoccu = $_POST['fathersoccu'];
-$fathersrelig = $_POST['fathersrelig'];
-$mothersname = $_POST['mothersname'];
-$mage = $_POST['mage'];
-$mothersoccu = $_POST['mothersoccu'];
-$mothersrelig = $_POST['mothersrelig'];
-$status = $_POST['status'];
-$educatt = $_POST['educatt'];
-$employed = $_POST['employed'];
-$reg = $_POST['reg'];
-//$bdate = $month . " " . $day . "," . $year;
-$option = $_POST['option1'];
+
+foreach (array_keys($_POST) as $key) {
+  $$key = mysql_real_escape_string($_POST[$key]);
+}
+
 $bdate = $month . " " . $day . "," . $year;
-$hawid = $_POST['hawid'];
  
 /////////kuha sa controller id 
 $file = fopen("controller.txt", "r");
